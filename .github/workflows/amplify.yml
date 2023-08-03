@@ -7,9 +7,9 @@ backend:
         - amplifyPush --simple
 frontend:
   phases:
-    preBuild:
-      commands:
-        - npm ci
+#    preBuild:
+#      commands:
+#        - npm ci
     build:
       commands:
         - npm run build
