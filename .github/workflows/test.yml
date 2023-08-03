@@ -1,8 +1,8 @@
-name: "RUN TESTS ON PUSH then deploy"
+name: "Tests"
 on:
   push:
     branches:
-      - deployment
+      - deploy
 jobs:
     test_and_deploy:
         runs-on: ubuntu-latest
