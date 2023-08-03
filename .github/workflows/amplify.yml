@@ -4,23 +4,24 @@ on:
   push:
     branches:
       - main
-backend:
-  phases:
-    build:
-      commands:
-        - amplifyPush --simple
-frontend:
-  phases:
-    preBuild:
-      commands:
-        - npm install
-    build:
-      commands:
-        - npm run build
-  artifacts:
-    baseDirectory: build
-    files:
-      - '**/*'
-  cache:
-    paths:
-      - node_modules/**/*
+jobs:
+  backend:
+    phases:
+      build:
+        commands:
+          - amplifyPush --simple
+  frontend:
+    phases:
+      preBuild:
+        commands:
+          - npm install
+      build:
+        commands:
+          - npm run build
+    artifacts:
+      baseDirectory: build
+      files:
+        - '**/*'
+    cache:
+      paths:
+        - node_modules/**/*
